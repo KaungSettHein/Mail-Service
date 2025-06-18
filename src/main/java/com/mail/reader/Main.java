@@ -87,8 +87,6 @@ public class Main {
 
         new Thread(() -> {
             try {
-                System.out.println("Starting email fetch...");
-
                 Properties props = System.getProperties();
                 props.put("mail.imaps.ssl.trust", "*");
 
@@ -131,7 +129,6 @@ public class Main {
 
         emailList.addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) {
-                System.out.println("email list is fine.");
                 EmailMessage selected = emailList.getSelectedValue();
                 if (selected != null) {
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
